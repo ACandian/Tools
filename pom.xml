@@ -7,6 +7,7 @@
   <name>Tools</name>
   <description>Reusable utility classes.</description>
   <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
     <sonar.exclusions>**/pom.xml</sonar.exclusions>
