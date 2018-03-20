@@ -9,6 +9,8 @@ import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,8 +65,24 @@ public final class LoadRessource {
      */
     private static Properties properties = null;
 
-    private LoadRessource() {
+    /**
+     * A Map of the last HTTP response header fields
+     */
+    private static Map<String, List<String>> responseHeaders;
 
+    private LoadRessource() {
+        super();
+    }
+
+    /**
+     * Returns an unmodifiable Map of the header fields. The Map keys are Strings
+     * that represent the response-header field names. Each Map value is an
+     * unmodifiable List of Strings that represents the corresponding field values.
+     * 
+     * @return a Map of header fields
+     */
+    public static Map<String, List<String>> getResponseHeaders() {
+        return responseHeaders;
     }
 
     /**
@@ -270,6 +288,8 @@ public final class LoadRessource {
             } else {
                 in = connection.getInputStream();
             }
+
+            responseHeaders = connection.getHeaderFields();
 
             try {
                 getRessource(in, out);

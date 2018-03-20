@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.cdn</groupId>
   <artifactId>tools</artifactId>
-  <version>0.3</version>
+  <version>0.4-SNAPSHOT</version>
   <name>Tools</name>
   <description>Reusable utility classes.</description>
   <properties>
