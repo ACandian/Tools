@@ -45,7 +45,6 @@ public abstract class AbstractConfiguration {
 
         try (FileInputStream in = new FileInputStream("./configs.properties")) {
             properties.load(in);
-            in.close();
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, "Problème à l'ouverture du fichier de configuration.", e);
         }
